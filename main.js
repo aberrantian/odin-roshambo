@@ -24,8 +24,5 @@ function getComputerChoice() {
     }
 }
 
-let computerChoice = getComputerChoice().toLocaleLowerCase();
-let userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
-
-
-
+const computerChoice = getComputerChoice().toLocaleLowerCase();
+const userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
