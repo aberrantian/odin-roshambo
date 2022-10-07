@@ -14,15 +14,16 @@ function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
 
     if (choice === 0) {
-        return "Rock"
+        return "rock"
     }
     else if (choice === 1) {
-        return "Paper"
+        return "paper"
     }
     else if (choice === 2) {
-        return "Scissors"
+        return "scissors"
     }
 }
 
-const computerChoice = getComputerChoice().toLocaleLowerCase();
+const computerChoice = getComputerChoice();
 const userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+
