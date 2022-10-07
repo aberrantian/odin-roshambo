@@ -24,7 +24,8 @@ function getComputerChoice() {
     }
 }
 
-let userChoice = prompt("Rock, Paper, or Scissors?");
+let computerChoice = getComputerChoice().toLocaleLowerCase();
+let userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
-console.log(getComputerChoice())
+
 
