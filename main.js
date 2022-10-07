@@ -1,15 +1,3 @@
-/*
-Randomly pick from "Rock", "Paper", or "Scissors"
-Prompt user for their choice
-Compare answers
-Tell user if they won/lost/tied
-Ask to play again
-If yes
-    play again
-else
-    end
-*/
-
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
 
@@ -24,15 +12,18 @@ function getComputerChoice() {
     }
 }
 
-const computerChoice = getComputerChoice();
-const userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+let gamesWon = 0;
 
 function playRoshambo() {
+    const computerChoice = getComputerChoice();
+    const userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
+
     if (computerChoice === userChoice) {
         return `Tie! You both chose ${userChoice}`;
     }
 
     if (computerChoice === "rock" && userChoice === "paper") {
+        gamesWon += 1;
         return "You win! Paper beats Rock!";
     } else {
         return "You lose! Rock beats Paper!";
@@ -41,14 +32,24 @@ function playRoshambo() {
     if (computerChoice === "paper" && userChoice === "rock") {
         return "You lose! Paper beats Rock!";
     } else {
+        gamesWon += 1;
         return "You win! Scissors beats Paper!";
     }
 
     if (computerChoice === "scissors" && userChoice === "rock") {
+        gamesWon += 1;
         return "You win! Rock beats Scissors!";
     } else {
         return "You lose! Scissors beats Paper!";
     }
 }
 
-console.log(playRoshambo())
+function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log(playRoshambo());
+    }
+
+    return `Games won: ${gamesWon}/5.`
+}
+
+console.log(game())
