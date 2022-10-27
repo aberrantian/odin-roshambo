@@ -44,3 +44,11 @@ function playRoshambo() {
     }
 }
 
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', playRoshambo);
+
+const paper = document.querySelector('#paper');
+rock.addEventListener('click', playRoshambo);
+
+const scissors = document.querySelector('#scissors');
+rock.addEventListener('click', playRoshambo);
