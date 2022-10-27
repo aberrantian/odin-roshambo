@@ -12,47 +12,88 @@ function getComputerChoice() {
     }
 }
 
-let points = 0;
-let gamesPlayed = 0;
+let userPoints = 0;
+let computerPoints = 0;
+let roundsPlayed = 0;
+
+const runningScore = document.querySelector('#running-score');
+
+function resetRunningScore() {
+    if (userPoints >= 3 || computerPoints >= 3 || roundsPlayed == 5) {
+        userPoints = 0;
+        computerPoints = 0;
+        roundsPlayed = 0;        
+    }
+}
+
+function updateRunningScore() {
+    if (userPoints >= 3) {
+        runningScore.innerHTML = `
+            Round ${roundsPlayed}/5<br>
+            Your points: ${userPoints}<br>
+            Computer points: ${computerPoints}<br>
+            You WON best of 5`;
+    } else if (computerPoints >= 3) {
+        runningScore.innerHTML = `
+            Round ${roundsPlayed}/5<br>
+            Your points: ${userPoints}<br>
+            Computer points: ${computerPoints}<br>
+            You LOST best of 5`;
+    } else {
+        runningScore.innerHTML = `
+            Round ${roundsPlayed}/5<br>
+            Your points: ${userPoints}<br>
+            Computer points: ${computerPoints}<br>`;
+    };
+    
+    resetRunningScore();
+};
 
 function playRoshambo(userChoice) {
     const computerChoice = getComputerChoice();
 
     if (computerChoice === userChoice) {
-        gamesPlayed++;
+        roundsPlayed++;
+        updateRunningScore();
         return `Tie! You both chose ${userChoice}`;
     };
 
     if (userChoice === 'rock' && computerChoice === 'paper') {
-        gamesPlayed++;
+        roundsPlayed++;
         computerPoints++;
+        updateRunningScore();
         return 'You lost! Paper beats rock';
     } else if (userChoice === 'rock' && computerChoice === 'scissors') {
-        gamesPlayed++;
+        roundsPlayed++;
         userPoints++;
+        updateRunningScore();
         return 'You won! Rock beats scissors';
     };
 
     if (userChoice === 'paper' && computerChoice === 'rock') {
-        gamesPlayed++;
+        roundsPlayed++;
         userPoints++;
+        updateRunningScore();
         return 'You won! Paper beats rock';
     } else if (userChoice === 'paper' && computerChoice === 'scissors') {
-        gamesPlayed++;
+        roundsPlayed++;
         computerPoints++;
+        updateRunningScore();
         return 'You lost! Scissors beats paper';
     };
 
     if (userChoice === 'scissors' && computerChoice === 'rock') {
-        gamesPlayed++;
+        roundsPlayed++;
         computerPoints++;
+        updateRunningScore();
         return 'You lost! Rock beats scissors';
     } else if (userChoice === 'scissors' && computerChoice === 'paper') {
-        gamesPlayed++;
+        roundsPlayed++;
         userPoints++;
+        updateRunningScore();
         return 'You won! Scissors beats paper';
     };
-}
+};
 
 const results = document.querySelector('#results');
 
