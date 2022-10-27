@@ -19,9 +19,25 @@ function playRoshambo(userChoice) {
 
     if (computerChoice === userChoice) {
         return `Tie! You both chose ${userChoice}`;
-    }
+    };
 
-    
+    if (userChoice === 'rock' && computerChoice === 'paper') {
+        return 'You lost! Paper beats rock';
+    } else if (userChoice === 'rock' && computerChoice === 'scissors') {
+        return 'You won! Rock beats scissors';
+    };
+
+    if (userChoice === 'paper' && computerChoice === 'rock') {
+        return 'You won! Paper beats rock';
+    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
+        return 'You lost! Scissors beats paper';
+    };
+
+    if (userChoice === 'scissors' && computerChoice === 'rock') {
+        return 'You lost! Rock beats scissors';
+    } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+        return 'You won! Scissors beats paper';
+    };
 }
 
 const rock = document.querySelector('#rock');
