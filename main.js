@@ -45,10 +45,16 @@ function playRoshambo() {
 }
 
 const rock = document.querySelector('#rock');
-rock.addEventListener('click', playRoshambo);
+rock.addEventListener('click', () => {
+    console.log(playRoshambo('rock'));
+});
 
 const paper = document.querySelector('#paper');
-rock.addEventListener('click', playRoshambo);
+paper.addEventListener('click', () => {
+    console.log(playRoshambo('paper'));
+});
 
 const scissors = document.querySelector('#scissors');
-rock.addEventListener('click', playRoshambo);
+scissors.addEventListener('click', () => {
+    console.log(playRoshambo('scissors'));
+});
