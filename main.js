@@ -25,28 +25,31 @@ function playRoshambo(userChoice) {
 
     if (userChoice === 'rock' && computerChoice === 'paper') {
         gamesPlayed++;
+        computerPoints++;
         return 'You lost! Paper beats rock';
     } else if (userChoice === 'rock' && computerChoice === 'scissors') {
         gamesPlayed++;
-        points++;
+        userPoints++;
         return 'You won! Rock beats scissors';
     };
 
     if (userChoice === 'paper' && computerChoice === 'rock') {
         gamesPlayed++;
-        points++;
+        userPoints++;
         return 'You won! Paper beats rock';
     } else if (userChoice === 'paper' && computerChoice === 'scissors') {
         gamesPlayed++;
+        computerPoints++;
         return 'You lost! Scissors beats paper';
     };
 
     if (userChoice === 'scissors' && computerChoice === 'rock') {
         gamesPlayed++;
+        computerPoints++;
         return 'You lost! Rock beats scissors';
     } else if (userChoice === 'scissors' && computerChoice === 'paper') {
         gamesPlayed++;
-        points++;
+        userPoints++;
         return 'You won! Scissors beats paper';
     };
 }
