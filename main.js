@@ -14,34 +14,14 @@ function getComputerChoice() {
 
 let gamesWon = 0;
 
-function playRoshambo() {
+function playRoshambo(userChoice) {
     const computerChoice = getComputerChoice();
-    const userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
     if (computerChoice === userChoice) {
         return `Tie! You both chose ${userChoice}`;
     }
 
-    if (computerChoice === "rock" && userChoice === "paper") {
-        gamesWon += 1;
-        return "You win! Paper beats Rock!";
-    } else {
-        return "You lose! Rock beats Paper!";
-    }
-
-    if (computerChoice === "paper" && userChoice === "rock") {
-        return "You lose! Paper beats Rock!";
-    } else {
-        gamesWon += 1;
-        return "You win! Scissors beats Paper!";
-    }
-
-    if (computerChoice === "scissors" && userChoice === "rock") {
-        gamesWon += 1;
-        return "You win! Rock beats Scissors!";
-    } else {
-        return "You lose! Scissors beats Paper!";
-    }
+    
 }
 
 const rock = document.querySelector('#rock');
