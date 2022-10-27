@@ -12,36 +12,30 @@ function getComputerChoice() {
     }
 }
 
-let gamesWon = 0;
-
-function playRoshambo() {
+function playRoshambo(userChoice) {
     const computerChoice = getComputerChoice();
-    const userChoice = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
     if (computerChoice === userChoice) {
         return `Tie! You both chose ${userChoice}`;
-    }
+    };
 
-    if (computerChoice === "rock" && userChoice === "paper") {
-        gamesWon += 1;
-        return "You win! Paper beats Rock!";
-    } else {
-        return "You lose! Rock beats Paper!";
-    }
+    if (userChoice === 'rock' && computerChoice === 'paper') {
+        return 'You lost! Paper beats rock';
+    } else if (userChoice === 'rock' && computerChoice === 'scissors') {
+        return 'You won! Rock beats scissors';
+    };
 
-    if (computerChoice === "paper" && userChoice === "rock") {
-        return "You lose! Paper beats Rock!";
-    } else {
-        gamesWon += 1;
-        return "You win! Scissors beats Paper!";
-    }
+    if (userChoice === 'paper' && computerChoice === 'rock') {
+        return 'You won! Paper beats rock';
+    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
+        return 'You lost! Scissors beats paper';
+    };
 
-    if (computerChoice === "scissors" && userChoice === "rock") {
-        gamesWon += 1;
-        return "You win! Rock beats Scissors!";
-    } else {
-        return "You lose! Scissors beats Paper!";
-    }
+    if (userChoice === 'scissors' && computerChoice === 'rock') {
+        return 'You lost! Rock beats scissors';
+    } else if (userChoice === 'scissors' && computerChoice === 'paper') {
+        return 'You won! Scissors beats paper';
+    };
 }
 
 function game() {
