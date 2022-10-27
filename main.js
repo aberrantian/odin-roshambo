@@ -38,12 +38,17 @@ function playRoshambo(userChoice) {
     };
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRoshambo());
-    }
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    console.log(playRoshambo('rock'));
+});
 
-    return `Games won: ${gamesWon}/5.`
-}
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    console.log(playRoshambo('paper'));
+});
 
-console.log(game())
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    console.log(playRoshambo('scissors'));
+});
