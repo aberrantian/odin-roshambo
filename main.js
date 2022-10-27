@@ -44,12 +44,3 @@ function playRoshambo() {
     }
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRoshambo());
-    }
-
-    return `Games won: ${gamesWon}/5.`
-}
-
-console.log(game())
