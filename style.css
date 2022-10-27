@@ -3,3 +3,7 @@ body {
     color: white;
     text-align: center;
 }
+
+button {
+    margin: 16px 0;
+}
