@@ -38,17 +38,19 @@ function playRoshambo(userChoice) {
     };
 }
 
+const results = document.querySelector('#results');
+
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
-    console.log(playRoshambo('rock'));
+    results.textContent = playRoshambo('rock');
 });
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
-    console.log(playRoshambo('paper'));
+    results.textContent = playRoshambo('paper');
 });
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
-    console.log(playRoshambo('scissors'));
+    results.textContent = playRoshambo('scissors');
 });
