@@ -27,13 +27,13 @@ function resetRunningScore() {
 }
 
 function updateRunningScore() {
-    if (userPoints >= 3) {
+    if (userPoints >= 3 || roundsPlayed == 5 && userPoints > computerPoints) {
         runningScore.innerHTML = `
             Round ${roundsPlayed}/5<br>
             Your points: ${userPoints}<br>
             Computer points: ${computerPoints}<br>
             You WON best of 5`;
-    } else if (computerPoints >= 3) {
+    } else if (computerPoints >= 3 || roundsPlayed == 5 && userPoints < computerPoints) {
         runningScore.innerHTML = `
             Round ${roundsPlayed}/5<br>
             Your points: ${userPoints}<br>
